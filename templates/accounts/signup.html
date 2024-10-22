@@ -1,0 +1,9 @@
+{% extends 'accounts/base.html' %}
+
+<h1 style="text-align: center;">Регистрация</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="glow-on-hover" type="submit">Зарегестрироваться</button>
+  <a href="{% url 'login' %}">ЕСТЬ АККАУНТ??????</a>
+</form>

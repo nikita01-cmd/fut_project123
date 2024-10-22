@@ -6,12 +6,6 @@ from .forms import loginus, Userregistrion
 
 
 
-def home(request):
-    return render(request, 'home.html')
-
-
-
-
 def registration(request):
     if request.method == 'POST':
         form =Userregistrion(request.POST)
@@ -21,7 +15,7 @@ def registration(request):
         return redirect('login')
     else:
         form = Userregistrion()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'accounts/signup.html', {'form': form})
 
 
 def user_login(request):
@@ -37,7 +31,7 @@ def user_login(request):
                 return redirect('home')
     else:
         form = loginus()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'accounts/login.html', {'form': form})
 
 
 def user_logout(request):
