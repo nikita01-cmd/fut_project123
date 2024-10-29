@@ -1,14 +1,18 @@
 
-
-
-
-
-<style type="text/css">
   body {
    background: #000000; /* цвет фона страницы */
    color: #827d7d;
   }
   
+  a {
+    
+   color: #827d7d; /* цвет текста параграфов */
+   font-family: Helvetica, sans-serif; /* гарнитура шрифта параграфов */
+   font-size: 150%; /* размер шрифта */
+   text-align:center;display:block;
+   
+  }
+
   
   .glow-on-hover {
     width: 220px;
@@ -69,12 +73,3 @@
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
-</style>
-
-<h1 style="text-align: center;">Авторизация</h1>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button class="glow-on-hover" type="sumbit">оправить</button>
-</form>
-
