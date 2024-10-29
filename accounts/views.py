@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .forms import loginus, Userregistrion
+from django.http import HttpResponse
 
 
 
@@ -16,6 +17,7 @@ def registration(request):
     else:
         form = Userregistrion()
     return render(request, 'accounts/signup.html', {'form': form})
+    
 
 
 def user_login(request):
