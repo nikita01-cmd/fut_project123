@@ -2,7 +2,7 @@
 {% extends 'accounts/base.html' %}
 
 {% block body %}
-
+<div class="panel"> 
 <h1 style="text-align: center;">Домашняя страница</h1>
 <form method="post">
   {% csrf_token %}
@@ -11,10 +11,18 @@
 
   <a href="{% url 'logout' %}">Выйти</a>
     {% else %}
-  <a href="{% url 'registration' %}">Зарегестрироваться</a>
+    
   <a href="{% url 'login' %}">Войти</a>
   {% endif %}
  
 
 </form>
+</div>
+<div class="main">
+  
+<h1>Магазин стройматериалов</h1>
+<a href="{% url 'catalog' %}" ><button class="glow-on-hover" type="submit">каталог</button></a>
+
+
+</div>
 {% endblock %}

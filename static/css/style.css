@@ -1,12 +1,13 @@
 
   body {
-   background: #000000; /* цвет фона страницы */
-   color: #827d7d;
+   background: #ffffff; /* цвет фона страницы */
+   color: #000000;
+   
   }
   
   a {
     
-   color: #827d7d; /* цвет текста параграфов */
+   color: #000000; /* цвет текста параграфов */
    font-family: Helvetica, sans-serif; /* гарнитура шрифта параграфов */
    font-size: 150%; /* размер шрифта */
    text-align:center;display:block;
@@ -29,7 +30,7 @@
 
 .glow-on-hover:before {
     content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00);
     position: absolute;
     top: -2px;
     left:-2px;
@@ -72,4 +73,95 @@
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
+}
+
+
+.panel {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 15%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #f5a81a; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 10px;
+    
+    
+    
+   
+}
+
+.panel a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    
+}
+
+.panel a:hover {
+    color: #000a67;
+    background-color:#827d7d
+}
+
+.main {
+    position: absolute;
+    top: 10px;
+    left: 15%;
+    height: 1000px;
+    width: 85%;
+    text-align: center;
+    
+    
+}
+
+
+
+
+
+
+
+.container {
+    background: #fff;
+    width: 400px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 25px;
+    margin: 20px auto;
+    position: relative;
+    z-index: 1;
+    border-top: 5px solid #f5a81a;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.container a {
+    color: #f5a81a;
+    text-decoration: none;
+}
+
+.container a:hover {color: #000a67;
+    background-color:#827d7d
+
+}
+
+.back {
+    background: #000000;
+    
+    
+    box-sizing: border-box;
+    border-top: 5px solid #f5a81a;
+    
+    
+    
+}
+.back a {
+    color: #f5a81a;
+    text-decoration: none;
+}
+
+.back a:hover {color: #000a67;
+    background-color:#827d7d
+
 }

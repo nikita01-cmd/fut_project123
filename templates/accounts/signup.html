@@ -2,12 +2,17 @@
 
 
 {% block body %}
+<div class="container"> 
 <h1 style="text-align: center;">Регистрация</h1>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <button class="glow-on-hover" type="submit">Зарегестрироваться</button>
-  <a href="{% url 'login' %}">ЕСТЬ АККАУНТ??????</a>
-</form>
+  <a href="{% url 'login' %}">ЕСТЬ АККАУНТ</a>
 
+</form>
+</div>
+<div class="back">
+  <a href="{% url 'home' %}">домой</a>
+</div>
 {% endblock %}
