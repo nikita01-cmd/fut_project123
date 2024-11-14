@@ -2,12 +2,18 @@
 {% extends 'accounts/base.html' %}
 
 {% block body %}
-<div class="catalog"> 
-<h1 style="text-align: center;">Домашняя страница</h1>
-<form method="post">
-    <p>dckpkdpcsdcsdcnsdin</p>
-
-</form>
-</div>
-
+<table border='1'>
+    <tr>
+      <th>ID</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+    </tr>
+    {% for x in derevz %}
+      <tr>
+        <td>{{ x.id }}</td>
+          <td>{{ x.price }}</td>
+        <td>{{ x.category }}</td>
+      </tr>
+    {% endfor %}
+   </table>
 {% endblock %}
