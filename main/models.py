@@ -20,8 +20,8 @@ class Product(models.Model):
     unique_features = models.TextField(null=True, blank=True)
     warranty_month = models.PositiveIntegerField()
 
-    def __str__(self):
-        return self.type
+    # def __str__(self):
+    #     return self.type
 
     class Meta:
         verbose_name = "Product"

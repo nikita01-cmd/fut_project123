@@ -1,19 +1,30 @@
 
 {% extends 'accounts/base.html' %}
+{% load static %}
 
 {% block body %}
-<table border='1'>
-    <tr>
-      <th>ID</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-    </tr>
-    {% for x in derevz %}
-      <tr>
-        <td>{{ x.id }}</td>
-          <td>{{ x.price }}</td>
-        <td>{{ x.category }}</td>
-      </tr>
-    {% endfor %}
-   </table>
+<div class="" > 
+<h1 style="text-align: center;">каталог</h1>
+<form method="get">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% for product in products %}
+    <div class="cards">
+        <div class="card_top">
+          <a href="{% url 'product_one' product.pk %}" class="card__image">
+            <img src="{% static 'product_image/' %}{{ product.image }}" alt="Product Image" />
+
+        </a>
+
+        </div>
+        <div class="card_down">
+            <p> цена:{{ x.price }} руб</p>
+            <a class="" href="{% url 'add_to_cart' product.pk %}">Add to Cart</a>
+        </div>
+    </div>
+    <div > 
+
+      <a href="{% url 'basket' %}">Корзина</a>
+</div>
+{% endfor %}
 {% endblock %}

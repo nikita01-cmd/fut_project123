@@ -1,0 +1,21 @@
+
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="" > 
+<h1 style="text-align: center;">каталог</h1>
+<form method="get">
+  {% csrf_token %}
+  {{ form.as_p }}
+  
+    <div class="">
+        <p> цена:{{ product.price }} руб</p>
+        <p> вес:{{ product.weight_kg }} кг</p>
+        <img src="{% static 'product_image/' %}{{ product.image }}" alt="Product Image" />
+        
+
+
+</div>
+
+{% endblock %}
