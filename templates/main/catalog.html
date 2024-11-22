@@ -29,6 +29,12 @@
           <div class="side-b side-close">Закрыть</div>
       </label>
   </div>
+  <div class="basket">
+    <a href="{% url 'basket' %}" class="card__image">
+      <img src="{% static 'product_image/product_images/korziny.png' %}" alt="Product Image" />
+    </a>
+  </div>  
+
 
   {% for product in products %}
   
