@@ -33,7 +33,9 @@ def product_one(request, product_id):
 
 
 def basket(request):
+    
     cart_items = CartItem.objects.filter(user=request.user)
+ 
     total_price = sum(item.product.price * item.quantity for item in cart_items)
     return render(request, 'main/basket.html', {'cart_items': cart_items, 'total_price': total_price})
 
