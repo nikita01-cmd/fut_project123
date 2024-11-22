@@ -4,11 +4,34 @@
 
 {% block body %}
 <div class="" > 
-<h1 style="text-align: center;">каталог</h1>
+
 <form method="get">
   {% csrf_token %}
   {{ form.as_p }}
+
+
+  <input type="checkbox" id="side-checkbox" />
+  <div class="side-panel">
+      <label class="side-button-2" for="side-checkbox">+</label>    
+      <div class="side-title">Вы</div>
+      {% if request.user.is_authenticated %}
+
+  <a href="{% url 'logout' %}">Выйти</a>
+  <a href="{% url 'basket' %}">Корзина</a>
+    {% else %}
+    
+  <a href="{% url 'login' %}">Войти</a>
+  {% endif %}
+  </div>
+  <div class="side-button-1-wr">
+      <label class="side-button-1" for="side-checkbox">
+          <div class="side-b side-open">Открыть</div>
+          <div class="side-b side-close">Закрыть</div>
+      </label>
+  </div>
+
   {% for product in products %}
+  
     <div class="cards">
         <div class="card_top">
           <a href="{% url 'product_one' product.pk %}" class="card__image">
@@ -19,12 +42,12 @@
         </div>
         <div class="card_down">
             <p> цена:{{ x.price }} руб</p>
-            <a class="" href="{% url 'add_to_cart' product.pk %}">Add to Cart</a>
+            <a class="" href="{% url 'add_to_cart' product.pk %}"><button class="glow-on-hove" type="submit">добавить в корзину</button></a>
         </div>
     </div>
     <div > 
 
-      <a href="{% url 'basket' %}">Корзина</a>
+      
 </div>
 {% endfor %}
 {% endblock %}

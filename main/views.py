@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import Product, CartItem
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -36,12 +37,13 @@ def basket(request):
     total_price = sum(item.product.price * item.quantity for item in cart_items)
     return render(request, 'main/basket.html', {'cart_items': cart_items, 'total_price': total_price})
 
+@login_required(login_url='/basket/<int:product_id>/')
 def add_to_cart(request, product_id):
-    mydata = Product.objects.get(id=product_id)
-    print(mydata)
-    cart_item, created = CartItem.objects.get_or_create(mydata=mydata, 
+    product = Product.objects.get(id=product_id)
+    
+    cart_item, created = CartItem.objects.get_or_create(product=product, 
                                                        user=request.user)
     cart_item.quantity += 1
     cart_item.save()
-    print(mydata)
+    
     return redirect('basket')

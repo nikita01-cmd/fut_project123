@@ -1,0 +1,39 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="" > 
+
+<form method="get">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+
+  <input type="checkbox" id="side-checkbox" />
+  <div class="side-panel">
+      <label class="side-button-2" for="side-checkbox">+</label>    
+      <div class="side-title">Вы</div>
+      {% if request.user.is_authenticated %}
+
+  <a href="{% url 'logout' %}">Выйти</a>
+  <a href="{% url 'basket' %}">Корзина</a>
+    {% else %}
+    
+  <a href="{% url 'login' %}">Войти</a>
+  {% endif %}
+  </div>
+  <div class="side-button-1-wr">
+      <label class="side-button-1" for="side-checkbox">
+          <div class="side-b side-open">Открыть</div>
+          <div class="side-b side-close">Закрыть</div>
+      </label>
+  </div>
+
+  {% for product in products %}
+
+<p>товар: {{product.id}} </p>
+<h1>ojojoj</h1>
+
+</div>  
+{% endfor %}
+{% endblock %}
