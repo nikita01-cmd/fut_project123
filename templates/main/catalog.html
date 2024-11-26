@@ -17,7 +17,7 @@
       {% if request.user.is_authenticated %}
 
   <a href="{% url 'logout' %}">Выйти</a>
-  <a href="{% url 'basket' %}">Корзина</a>
+
     {% else %}
     
   <a href="{% url 'login' %}">Войти</a>
@@ -31,7 +31,7 @@
   </div>
   <div class="basket">
     <a href="{% url 'basket' %}" class="card__image">
-      <img src="{% static 'product_image/product_images/korziny.png' %}" alt="Product Image" />
+      <img src="/media/korziny.png" alt="Product Image" />
     </a>
   </div>  
 
@@ -41,14 +41,14 @@
     <div class="cards">
         <div class="card_top">
           <a href="{% url 'product_one' product.pk %}" class="card__image">
-            <img src="{% static 'product_image/' %}{{ product.image }}" alt="Product Image" />
+            <img src="{{ product.image.url }}" alt="Product Image" />
 
         </a>
 
         </div>
         <div class="card_down">
             <p> цена:{{ product.price }} руб</p>
-            <a class="" href="{% url 'add_to_cart' product.pk %}"><button class="glow-on-hove" type="submit">добавить в корзину</button></a>
+            <button><a class="" href="{% url 'add_to_cart' product.pk %}">добавить в корзину</a></button>
         </div>
     </div>
     <div > 

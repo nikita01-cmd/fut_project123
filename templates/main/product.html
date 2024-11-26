@@ -12,7 +12,8 @@
     <div class="">
         <p> цена:{{ product.price }} руб</p>
         <p> вес:{{ product.weight_kg }} кг</p>
-        <img src="{% static 'product_image/' %}{{ product.image }}" alt="Product Image" />
+        <img src="{{ product.image.url }}" alt="Product Image" />
+        
         
 
 
