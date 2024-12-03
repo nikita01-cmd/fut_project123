@@ -7,7 +7,8 @@
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <button class="glow-on-hover" type="sumbit">войти</button>
+  <input type="hidden" name="next" value="{{ next }}">
+  <button class="glow-on-hover" type="submit">войти</button>
   <a href="{% url 'registration' %}">Зарегестрироваться</a>
 </form>
 

@@ -2,19 +2,57 @@
 {% load static %}
 
 {% block body %}
-<div class="" > 
+<button><a class="" href="{% url 'catalog' %}">каталог</a></button>
+<div class="bas" > 
 
 
   {% csrf_token %}
   {{ form.as_p }}
+  
+  
+  
+  
+  {% for x in cart_items %}
 
+  <div class="bassket_product" >
+    
+    
+    
 
-  <div>
-    <p>товар: {{ total_price }} </p>
-    {% for x in cart_items %}
-    <h1>ojojoj {{ x.quantity }} f</h1>
-    <h1>ojojoj {{ x.product.price }} f</h1>
+    <div class="basket_left">
+
+      <div class="basket__image">
+      
+        <img src="{{ x.product.image.url }}" alt="Product Image" />
+        
+      </div>
+      
+    </div>
+
+    <div class="basket_right">
+
+      <p> за 1: {{ x.product.price }} руб </p>
+
+      <p> количество: {{ x.quantity }} штук </p>
+      
+        <p> всего: {{ total_price }} руб </p>
+        <a href="{% url 'remove_from_cart' x.pk %}"> удалить</a>
+
+          
+        
+      
+      
+    </div>
+  
+  
+    
+    
   </div>
 </div>
-{% endfor%}
+
+
+
+
+{% endfor %}
+
 {% endblock %}

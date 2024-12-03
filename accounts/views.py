@@ -30,7 +30,8 @@ def user_login(request):
             user = authenticate(request, username=username, password=password)
             if user:
                 login(request, user)
-                return redirect('home')
+                next_url = request.GET.get('next') or '/'
+                return redirect(next_url)
     else:
         form = loginus()
     return render(request, 'accounts/login.html', {'form': form})

@@ -342,16 +342,84 @@ a:hover {
     width: 55px;
     min-height: 50px;
     left: 90%;
-    
+    bottom: 50px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     border-radius: 4px;
     transition: 0.2s;
     position: relative;
   }
-  img {
+  .basket img {
     width: 100%;
     height: 100%;
     object-fit: contain; /* Встраиваем картинку в контейнер card__image */
     transition: 0.2s;
   }
+ /*-------------- */
+
+
+
+.bassket_product {
+  top: 50px;
+  
+  width: 100%;
+    min-height: 350px;
+    
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row ; /* Размещаем элементы в колонку */
+    border-radius: 4px;
+    transition: 0.2s;
+    position: relative;
+}
+
+.basket_left {
+  
+  position: relative;
+  overflow: hidden; /* Скрываем, что выходит за пределы */
+}
+
+  
+  
+ img {
+    width: 400px;
+    height: 400px;
+    
+    
+  }
+
+
+.basket_right {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+    padding: 10px;
+    
+  }
+
+
+
+
+
+
+
+
+  
+
+ 
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  

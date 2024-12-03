@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block body %}
-<div class="" > 
+ 
 
 <form method="get">
   {% csrf_token %}
@@ -30,11 +30,17 @@
       </label>
   </div>
   <div class="basket">
-    <a href="{% url 'basket' %}" class="card__image">
-      <img src="/media/korziny.png" alt="Product Image" />
-    </a>
+    
+    
+      
+      <a href="{% url 'basket' %}">
+        <img class="cart__image" src="/media/korziny.png" alt="Cart" />
+        
+      </a>
+      
+   
   </div>  
-
+  <div class="catalog" >
 
   {% for product in products %}
   
@@ -48,10 +54,14 @@
         </div>
         <div class="card_down">
             <p> цена:{{ product.price }} руб</p>
-            <button><a class="" href="{% url 'add_to_cart' product.pk %}">добавить в корзину</a></button>
+            <button><a class="" href="{% url 'add_to_cart' product.pk %}">добавить в корзину</a>
+              
+          
+            </button>
+            
         </div>
     </div>
-    <div > 
+    
 
       
 </div>
