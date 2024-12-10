@@ -173,9 +173,9 @@ a:hover {
 
 .cards {
     
-    width: 225px;
+    width: 525px;
     min-height: 350px;
-    left: 5%;
+    left: 30%;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column; /* Размещаем элементы в колонку */

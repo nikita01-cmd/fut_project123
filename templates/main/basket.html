@@ -10,7 +10,7 @@
   {{ form.as_p }}
   
   
-  
+  <p style="font-size: 32px;"> <b> всего: {{ total_price }} руб </b></p>
   
   {% for x in cart_items %}
 
@@ -35,8 +35,9 @@
 
       <p> количество: {{ x.quantity }} штук </p>
       
-        <p> всего: {{ total_price }} руб </p>
+        
         <a href="{% url 'remove_from_cart' x.pk %}"> удалить</a>
+        
 
           
         
